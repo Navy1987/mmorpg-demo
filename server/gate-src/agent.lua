@@ -181,7 +181,7 @@ local function r_startgame(self, req)
 end
 
 local function r_movesync(self, cmd, packet)
-	local req = cproto:decode(cmd, dat, 4)
+	local req = cproto:decode(cmd, packet, 4)
 	self.coord_x = req.coord_x
 	self.coord_z = req.coord_z
 	return hub.tryforward(self, cmd, packet)
